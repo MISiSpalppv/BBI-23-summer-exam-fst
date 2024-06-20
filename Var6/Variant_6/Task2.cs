@@ -53,7 +53,7 @@ namespace Variant_6
 
             public override string ToString()
             {
-                return $"Type = {this.GetType().Name}, ISBN = {ISBN}, spec = {Cost()}, Title = {Title}, author = {Author}, year = {Year}";
+                return $"Type = {this.GetType().Name}, ISBN = {ISBN}";
             }
 
             public static Book[] Select(Book[] bookArray, string author)
@@ -126,7 +126,7 @@ namespace Variant_6
             int i = 0, j = 0, k = 0;
             while (i < left.Length && j < right.Length)
             {
-                if (left[i].Year <= right[j].Year)
+                if (left[i].Cost() <= right[j].Cost())
                 {
                     result[k++] = left[i++];
                 }
@@ -162,7 +162,7 @@ namespace Variant_6
 
             public override string ToString()
             {
-                return base.ToString() + $", IsHardCover = {IsHardCover}";
+                return $"Type = {this.GetType().Name}, ISBN = {ISBN}, spec = {IsHardCover}";
             }
         }
 
